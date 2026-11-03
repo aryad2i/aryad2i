@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Aplikasi sederhana untuk mencari dan melihat profil pengguna GitHub.">
+  <title>GitHub Profile Finder</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="container">
+    <header>
+      <p class="eyebrow">Praktikum Pemrograman Web</p>
+      <h1>GitHub Profile Finder</h1>
+      <p class="subtitle">Cari profil pengguna GitHub dengan memasukkan username mereka.</p>
+    </header>
+
+    <section class="search-card" aria-label="Form pencarian profil GitHub">
+      <form id="searchForm">
+        <label for="username">Username GitHub</label>
+        <div class="search-row">
+          <input
+            id="username"
+            name="username"
+            type="text"
+            placeholder="Contoh: octocat"
+            autocomplete="off"
+            spellcheck="false"
+            maxlength="39"
+            required
+          >
+          <button id="searchButton" type="submit">Cari Profil</button>
+        </div>
+        <p class="hint">Masukkan username GitHub, bukan alamat email atau URL profil.</p>
+      </form>
+      <div id="status" class="status" role="status" aria-live="polite" hidden></div>
+    </section>
+
+    <section id="result" class="result-card" aria-label="Hasil profil GitHub" hidden>
+      <div class="profile-top">
+        <img id="avatar" class="avatar" src="" alt="Avatar pengguna GitHub">
+        <div>
+          <h2 id="name" class="name"></h2>
+          <p id="login" class="username"></p>
+        </div>
+      </div>
+
+      <p id="bio" class="bio"></p>
+
+      <div class="stats">
+        <div class="stat">
+          <strong id="repos">0</strong>
+          <span>Repositori Publik</span>
+        </div>
+        <div class="stat">
+          <strong id="followers">0</strong>
+          <span>Followers</span>
+        </div>
+        <div class="stat">
+          <strong id="following">0</strong>
+          <span>Following</span>
+        </div>
+      </div>
+
+      <a id="profileLink" class="profile-link" href="#" target="_blank" rel="noopener noreferrer">
+        Lihat Profil GitHub
+      </a>
+    </section>
+
+<div id="error404-container" style="display: none; text-align: center; padding: 40px 20px;">
+    <h1 style="font-size: 100px; margin: 0; color: #dc3545; font-weight: bold;">404</h1>
+    <h2 style="font-size: 24px; margin: 10px 0; color: #333;">User Tidak Ditemukan</h2>
+    <p style="color: #666; margin-bottom: 20px;">Periksa kembali username GitHub yang Anda masukkan.</p>
+    <button id="btn-kembali" style="padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">Cari Lagi</button>
+</div>
+
+    <footer>Data profil diambil dari GitHub Public API.</footer>
+  </main>
+</body>
+</html>
