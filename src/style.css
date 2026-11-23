@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  background: #f6f2fb;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: Inter, "Segoe UI", system-ui, -apple-system, sans-serif;
+  background: #f6f2fb;
+  color: #322847;
+}
+
+button {
+  cursor: pointer;
+  font: inherit;
+}
+
+button,
+input {
+  outline: none;
+}
